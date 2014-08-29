@@ -180,6 +180,7 @@ module SerializableAttributes
         end
 
         @model.send(:define_method, "#{name}=") do |value|
+          self.send(:attribute_will_change!, name_str) unless value == send(name)
           write_serialized_field name_str, value
         end
 
