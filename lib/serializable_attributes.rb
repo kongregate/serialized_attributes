@@ -73,3 +73,4 @@ end
 
 # Backwards compatible hack.
 Object.const_set :SerializedAttributes, SerializableAttributes
+SerializableAttributes.setup
